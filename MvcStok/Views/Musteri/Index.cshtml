@@ -1,0 +1,49 @@
+﻿@using MvcStok.Models.Entity
+@model List<tbl_musteri>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+    @using (Html.BeginForm("Index","Musteri",FormMethod.Get))
+            {
+                <p>
+                    <h4>Aranacak Müşteri Adı</h4> @Html.TextBox("p")
+                    <input type="submit" value="Ara" class="btn btn-info"/>
+                </p>
+            }
+    <br />
+
+    <a href="/Musteri/YeniMusteri/" class="btn btn-success">Yeni Müşteri Ekle</a>
+    <table class="table table-bordered " style="margin-top:25px">
+        <tr>
+            <th>MÜŞTERİ ID</th>
+            <th>MÜŞTERİ ADI</th>
+            <th>MÜŞTERİ SOYAD</th>
+            <th>SİL</th>
+            <th>GÜNCELLE</th>
+            <th>ALERT.S</th>
+        </tr>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <th>@item.MUSTERİID</th>
+                    <td>@item.MUSTERİAD</td>
+                    <td>@item.MUSTERİSOYAD</td>
+                    <td><a href="/Musteri/Sil/@item.MUSTERİID" class="btn btn-danger">Sil</a></td>
+                    <td><a href="/Musteri/Musterigetir/@item.MUSTERİID" class="btn btn-warning">Güncelle</a></td>
+                    <td>@Html.ActionLink("SİL", "Sil", new { id=item.MUSTERİID }, new { @class = "btn btn-info", onclick = "return confirm ('Silmek istiyomusunuz ?')"})</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+</body>
+</html>

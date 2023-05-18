@@ -1,0 +1,37 @@
+﻿@model MvcStok.Models.Entity.tbl_Urunler
+@{
+    ViewBag.Title = "UrunGetir";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<h2>Ürün Güncelleme Sayfası</h2>
+
+@using (Html.BeginForm("Güncelle", "Urun", FormMethod.Post))
+{
+    <div class="form-group">
+
+        @Html.LabelFor(m => m.URUNID)
+        @Html.TextBoxFor(m => m.URUNID, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(n => n.URUNAD)
+        @Html.TextBoxFor(n => n.URUNAD, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(n => n.MARKA)
+        @Html.TextBoxFor(n => n.MARKA, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(n => n.URUNKATAGORİ)
+        @Html.DropDownListFor(m=> m.tbl_katagori.KATAGORIID,(List<SelectListItem>)ViewBag.der, new { @class = "form-control" })
+
+        @*@Html.TextBoxFor(n => n.URUNKATAGORİ, new { @class = "form-control" })*@
+        <br />
+        @Html.LabelFor(n => n.URUNFİYAT)
+        @Html.TextBoxFor(n => n.URUNFİYAT, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(n => n.STOK)
+        @Html.TextBoxFor(n => n.STOK, new { @class = "form-control" })
+       
+    </div>
+    <div>
+        <button class="btn btn-success">Ürün Güncelle</button>
+    </div>
+}

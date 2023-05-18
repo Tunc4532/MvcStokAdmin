@@ -1,0 +1,25 @@
+﻿@model MvcStok.Models.Entity.tbl_musteri
+@{
+    ViewBag.Title = "Musterigetir";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<h2>Müşteri Güncelleme Sayfası</h2>
+
+@using (Html.BeginForm("Güncelle", "Musteri", FormMethod.Post))
+{
+    <div class="form-group">
+
+        @Html.LabelFor(m => m.MUSTERİID)
+        @Html.TextBoxFor(m => m.MUSTERİID, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(n => n.MUSTERİAD)
+        @Html.TextBoxFor(n => n.MUSTERİAD, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(n => n.MUSTERİSOYAD)
+        @Html.TextBoxFor(n => n.MUSTERİSOYAD, new { @class = "form-control" })
+    </div>
+    <div>
+        <button class="btn btn-success">Müşteri Güncelle</button>
+    </div>
+}

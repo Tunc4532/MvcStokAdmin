@@ -1,0 +1,38 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<button type="button" class="btn btn-info" data-toggle="modal" data-target="#Modal2">
+    Yardım Ekranı
+</button>
+
+<div class="modal" id="Modal2">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Yardım Ekaranı</h4>
+            </div>
+            <form>
+                <div class="modal-body">
+                    <label>Proje Sahibi Bilgileri</label>
+
+                    @*label kullanarak icon yardımı görsel*@
+                    <br />
+                    <label>Yardım Hesaplarımız</label>
+                    @*ikonlar ile href üzerinden baglantı verme*@
+                    <br />
+                    <label>Site Hakkında</label>
+                    @*ikon ve label açıkllama*@
+                    <br />
+                    <label>Sosyal Medya Hsaplarımız</label>
+                    @*ikonlar ile href kullan link ver*@
+                    <br />
+                    <button class="btn btn-info">Sorun Bildir.</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>
